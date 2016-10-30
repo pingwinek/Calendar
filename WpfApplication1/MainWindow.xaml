@@ -11,7 +11,7 @@
             <TextBlock Name="contenttxt"
                        TextWrapping="Wrap" 
                        TextAlignment="Center" 
-                       Foreground="Aqua"
+                       Foreground="DarkBlue"
                        Text="Dzień poborców podatkowych, Międzynarodowe święto roweru" 
                        FontSize="16" 
                        FontWeight="Bold" 
@@ -29,6 +29,10 @@
         <Label HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top">
             <TextBlock Name="yeartxt" TextWrapping="Wrap" Text="2000" FontSize="16"/>
         </Label>
-
+        <!--
+        <Button x:Name="btntom" Click="tomorrowClick" Content="Jutro" HorizontalAlignment="Left" Margin="250,36,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnyest" Click="yesterdayClick" Content="Wczoraj" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btntoday" Click="todayClick" Content="DZIŚ" HorizontalAlignment="Left" Margin="130,36,0,0" VerticalAlignment="Top" Width="75"/>
+        -->
     </Grid>
 </Window>

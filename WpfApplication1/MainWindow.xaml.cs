@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using System.Globalization;
 
 namespace WpfApplication1
 {
@@ -23,40 +24,101 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
+        int p = 0;
+
         public MainWindow()
         {
             InitializeComponent();
-            Calendar();
+            Calendar(p);
             GetData(DateTime.Now.Month, DateTime.Now.Day);
+            //btntoday.FontWeight = FontWeights.Bold;
         }
 
-        void Calendar()
+        private void todayClick(object sender, RoutedEventArgs e)
         {
-            txt1.Text = DateTime.Now.DayOfWeek.ToString();
-            monthtxt.Text = DateTime.Now.Month.ToString();
-            daytxt.Text = DateTime.Now.Day.ToString();
-            datetxt.Text = DateTime.Now.Date.ToShortDateString();
-            yeartxt.Text = DateTime.Now.Date.Year.ToString();
+            p = 0;
+            Calendar(p);
+            DateTime today = DateTime.Now;
+            DateTime answer = today.AddDays(p);
+            GetData(answer.Month, answer.Day);
+
+            //btntom.FontWeight = FontWeights.Light;
+            //btnyest.FontWeight = FontWeights.Light;
+            //btntoday.FontWeight = FontWeights.Bold;
+        }
+
+        private void yesterdayClick(object sender, RoutedEventArgs e)
+        {
+            p--;
+            Calendar(p);
+            DateTime today = DateTime.Now;
+            DateTime answer = today.AddDays(p);
+            GetData(answer.Month, answer.Day);
+
+            //btntom.FontWeight = FontWeights.Light;
+            //btnyest.FontWeight = FontWeights.Bold;
+            //btntoday.FontWeight = FontWeights.Light;
+        }
+
+        private void tomorrowClick(object sender, RoutedEventArgs e)
+        {
+            p++;
+            Calendar(p);
+            DateTime today = DateTime.Now;
+            DateTime answer = today.AddDays(p);
+            GetData(answer.Month, answer.Day);
+
+            //btntom.FontWeight = FontWeights.Bold;
+            //btnyest.FontWeight = FontWeights.Light;
+            //btntoday.FontWeight = FontWeights.Light;
+        }
+
+        void Calendar(int param)
+        {
+            //CultureInfo ci = new CultureInfo("pl-PL");
+            DateTime today = DateTime.Now;
+            DateTime answer = today.AddDays(param);
+
+            string actualizeMonth = answer.ToString("MMMM");
+            string actualize = answer.ToString("dddd");
+
+            monthtxt.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(actualizeMonth);
+            txt1.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(actualize);
+            daytxt.Text = answer.Day.ToString();
+            datetxt.Text = answer.Date.ToShortDateString();
+            yeartxt.Text = answer.Date.Year.ToString();
+
+            if (txt1.Text.Equals("Niedziela"))
+            {
+                daytxt.Foreground = Brushes.Red;
+                txt1.Foreground = Brushes.Red;
+                monthtxt.Foreground = Brushes.Red;
+            }
+            else
+            {
+                daytxt.Foreground = Brushes.Black;
+                txt1.Foreground = Brushes.Black;
+                monthtxt.Foreground = Brushes.Black;
+            }
         }
 
         void GetData(int month, int day)
         {
             try
             {
-                SqlConnection thisConnection = new SqlConnection(@"Server=(local);Database=EventsToCalendar;Trusted_Connection=Yes;");
-                thisConnection.Open();
-
-                string Get_Data = "SELECT EventCal FROM EventsCalendar WHERE Month=month AND Day=day";
-
-                SqlCommand cmd = thisConnection.CreateCommand();
-                cmd.CommandText = Get_Data;
-
-                contenttxt.Text = cmd.ExecuteScalar().ToString();
+                CalendarDataContext dbContext = new CalendarDataContext();
+                using (var context = new CalendarDataContext())
+                {
+                    contenttxt.Text = (from t in context.EventsCalendars
+                                  where t.Day == day && t.Month == month
+                                  select t.EventCal).FirstOrDefault();
+                }
             }
             catch
             {
-                MessageBox.Show("db error");
+                MessageBox.Show("Błąd połączenia z bazą danych:(((");
             }
         }
+
     }
 }
