@@ -75,66 +75,66 @@ namespace WpfApplication1
             if (now.Year == 2017)
             {
                 todayHoliday = now.Date.ToShortDateString().Equals(bozeCialo17) ? bozeCialo : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(zeslDuchaSw17) ? zeslDuchaSw : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(wniebowstapienieNMP17) ? wniebowstapienieNMP : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(wielkanoc17) ? wielkanoc : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(poniedzialekWielkanocny17) ? poniedzialekWielkanocny : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(niedzielaPalnowa17) ? niedzielaPalnowa : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(popielec17) ? popielec : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(ostatki17) ? ostatki : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(tlustyCzwartek17) ? tlustyCzwartek : null;
+                todayHoliday = now.Date.ToShortDateString().Equals(zeslDuchaSw17) ? zeslDuchaSw : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(wniebowstapienieNMP17) ? wniebowstapienieNMP : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(wielkanoc17) ? wielkanoc : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(poniedzialekWielkanocny17) ? poniedzialekWielkanocny : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(niedzielaPalnowa17) ? niedzielaPalnowa : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(popielec17) ? popielec : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(ostatki17) ? ostatki : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(tlustyCzwartek17) ? tlustyCzwartek : todayHoliday;
             }
 
             else if (now.Year == 2018)
             {
                 todayHoliday = now.Date.ToShortDateString().Equals(bozeCialo18) ? bozeCialo : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(zeslDuchaSw18) ? zeslDuchaSw : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(wniebowstapienieNMP18) ? wniebowstapienieNMP : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(wielkanoc18) ? wielkanoc : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(poniedzialekWielkanocny18) ? poniedzialekWielkanocny : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(niedzielaPalnowa18) ? niedzielaPalnowa : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(popielec18) ? popielec : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(ostatki18) ? ostatki : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(tlustyCzwartek18) ? tlustyCzwartek : null;
+                todayHoliday = now.Date.ToShortDateString().Equals(zeslDuchaSw18) ? zeslDuchaSw : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(wniebowstapienieNMP18) ? wniebowstapienieNMP : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(wielkanoc18) ? wielkanoc : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(poniedzialekWielkanocny18) ? poniedzialekWielkanocny : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(niedzielaPalnowa18) ? niedzielaPalnowa : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(popielec18) ? popielec : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(ostatki18) ? ostatki : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(tlustyCzwartek18) ? tlustyCzwartek : todayHoliday;
             }
 
             else if (now.Year == 2019)
             {
                 todayHoliday = now.Date.ToShortDateString().Equals(bozeCialo19) ? bozeCialo : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(zeslDuchaSw19) ? zeslDuchaSw : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(wniebowstapienieNMP19) ? wniebowstapienieNMP : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(wielkanoc19) ? wielkanoc : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(poniedzialekWielkanocny19) ? poniedzialekWielkanocny : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(niedzielaPalnowa19) ? niedzielaPalnowa : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(popielec19) ? popielec : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(ostatki19) ? ostatki : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(tlustyCzwartek19) ? tlustyCzwartek : null;
+                todayHoliday = now.Date.ToShortDateString().Equals(zeslDuchaSw19) ? zeslDuchaSw : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(wniebowstapienieNMP19) ? wniebowstapienieNMP : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(wielkanoc19) ? wielkanoc : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(poniedzialekWielkanocny19) ? poniedzialekWielkanocny : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(niedzielaPalnowa19) ? niedzielaPalnowa : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(popielec19) ? popielec : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(ostatki19) ? ostatki : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(tlustyCzwartek19) ? tlustyCzwartek : todayHoliday;
             }
 
             else if (now.Year == 2020)
             {
                 todayHoliday = now.Date.ToShortDateString().Equals(bozeCialo20) ? bozeCialo : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(zeslDuchaSw20) ? zeslDuchaSw : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(wniebowstapienieNMP20) ? wniebowstapienieNMP : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(wielkanoc20) ? wielkanoc : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(poniedzialekWielkanocny20) ? poniedzialekWielkanocny : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(niedzielaPalnowa20) ? niedzielaPalnowa : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(popielec20) ? popielec : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(ostatki20) ? ostatki : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(tlustyCzwartek20) ? tlustyCzwartek : null;
+                todayHoliday = now.Date.ToShortDateString().Equals(zeslDuchaSw20) ? zeslDuchaSw : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(wniebowstapienieNMP20) ? wniebowstapienieNMP : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(wielkanoc20) ? wielkanoc : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(poniedzialekWielkanocny20) ? poniedzialekWielkanocny : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(niedzielaPalnowa20) ? niedzielaPalnowa : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(popielec20) ? popielec : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(ostatki20) ? ostatki : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(tlustyCzwartek20) ? tlustyCzwartek : todayHoliday;
             }
 
             else if (now.Year == 2021)
             {
                 todayHoliday = now.Date.ToShortDateString().Equals(bozeCialo21) ? bozeCialo : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(zeslDuchaSw21) ? zeslDuchaSw : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(wniebowstapienieNMP21) ? wniebowstapienieNMP : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(wielkanoc21) ? wielkanoc : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(poniedzialekWielkanocny21) ? poniedzialekWielkanocny : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(niedzielaPalnowa21) ? niedzielaPalnowa : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(popielec21) ? popielec : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(ostatki21) ? ostatki : null;
-                todayHoliday = now.Date.ToShortDateString().Equals(tlustyCzwartek21) ? tlustyCzwartek : null;
+                todayHoliday = now.Date.ToShortDateString().Equals(zeslDuchaSw21) ? zeslDuchaSw : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(wniebowstapienieNMP21) ? wniebowstapienieNMP : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(wielkanoc21) ? wielkanoc : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(poniedzialekWielkanocny21) ? poniedzialekWielkanocny : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(niedzielaPalnowa21) ? niedzielaPalnowa : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(popielec21) ? popielec : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(ostatki21) ? ostatki : todayHoliday;
+                todayHoliday = now.Date.ToShortDateString().Equals(tlustyCzwartek21) ? tlustyCzwartek : todayHoliday;
             }
             else todayHoliday = null;
 

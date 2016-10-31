@@ -128,6 +128,18 @@ namespace WpfApplication1
             {
                 MessageBox.Show("Błąd połączenia z bazą danych:(((");
             }
+            changeColorIfMovableHoliday();
+        }
+
+        void changeColorIfMovableHoliday()
+        {
+            if (char.IsUpper(contenttxt.Text[0]) == true && char.IsUpper(contenttxt.Text[1]) == true)
+            {
+                //contenttxt.Foreground = Brushes.Red;
+                daytxt.Foreground = Brushes.Red;
+                txt1.Foreground = Brushes.Red;
+                monthtxt.Foreground = Brushes.Red;
+            }
         }
 
     }
