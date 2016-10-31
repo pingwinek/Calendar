@@ -26,12 +26,14 @@ namespace WpfApplication1
     {
         int p = 0;
         MovableHolidays movableHoliday = new MovableHolidays();
+        DateTime today = DateTime.Now;
 
         public MainWindow()
         {
+            //today = today.AddDays(13);
             InitializeComponent();
             Calendar(p);
-            GetData(DateTime.Now.Month, DateTime.Now.Day);
+            GetData(today.Month, today.Day);
             //btntoday.FontWeight = FontWeights.Bold;
         }
 
@@ -39,9 +41,7 @@ namespace WpfApplication1
         {
             p = 0;
             Calendar(p);
-            DateTime today = DateTime.Now;
-            DateTime answer = today.AddDays(p);
-            GetData(answer.Month, answer.Day);
+            GetData(today.Month, today.Day);
 
             //btntom.FontWeight = FontWeights.Light;
             //btnyest.FontWeight = FontWeights.Light;
@@ -52,7 +52,6 @@ namespace WpfApplication1
         {
             p--;
             Calendar(p);
-            DateTime today = DateTime.Now;
             DateTime answer = today.AddDays(p);
             GetData(answer.Month, answer.Day);
 
@@ -65,7 +64,6 @@ namespace WpfApplication1
         {
             p++;
             Calendar(p);
-            DateTime today = DateTime.Now;
             DateTime answer = today.AddDays(p);
             GetData(answer.Month, answer.Day);
 
@@ -77,7 +75,6 @@ namespace WpfApplication1
         void Calendar(int param)
         {
             //CultureInfo ci = new CultureInfo("pl-PL");
-            DateTime today = DateTime.Now;
             DateTime answer = today.AddDays(param);
 
             string actualizeMonth = answer.ToString("MMMM");
@@ -110,15 +107,15 @@ namespace WpfApplication1
                 CalendarDataContext dbContext = new CalendarDataContext();
                 using (var context = new CalendarDataContext())
                 {
-                    if(movableHoliday.movableHol(DateTime.Now) != null)
+                    if(movableHoliday.movableHol(today) != null)
                     {
-                        contenttxt.Text = movableHoliday.movableHol(DateTime.Now) + ", " + (from t in context.EventsCalendars
+                        contenttxt.Text = movableHoliday.movableHol(today) + ", " + (from t in context.EventsCalendars
                                                                                      where t.Day == day && t.Month == month
                                                                                      select t.EventCal).FirstOrDefault();
                     }
                     else
                     {
-                        contenttxt.Text = movableHoliday.movableHol(DateTime.Now) + (from t in context.EventsCalendars
+                        contenttxt.Text = movableHoliday.movableHol(today) + (from t in context.EventsCalendars
                                                                                      where t.Day == day && t.Month == month
                                                                                      select t.EventCal).FirstOrDefault();
                     }
@@ -133,12 +130,19 @@ namespace WpfApplication1
 
         void changeColorIfMovableHoliday()
         {
-            if (char.IsUpper(contenttxt.Text[0]) == true && char.IsUpper(contenttxt.Text[1]) == true)
+            if (char.IsUpper(contenttxt.Text[0]) == true && char.IsUpper(contenttxt.Text[1]) == true && contenttxt.Text[9] != 'J' && contenttxt.Text[10] != 'U')
             {
                 //contenttxt.Foreground = Brushes.Red;
                 daytxt.Foreground = Brushes.Red;
                 txt1.Foreground = Brushes.Red;
                 monthtxt.Foreground = Brushes.Red;
+            }
+
+            if(contenttxt.Text[9] == 'J' && contenttxt.Text[10] == 'U')
+            {
+                daytxt.Foreground = Brushes.Black;
+                txt1.Foreground = Brushes.Black;
+                monthtxt.Foreground = Brushes.Black;
             }
         }
 
