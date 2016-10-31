@@ -25,6 +25,7 @@ namespace WpfApplication1
     public partial class MainWindow : Window
     {
         int p = 0;
+        MovableHolidays movableHoliday = new MovableHolidays();
 
         public MainWindow()
         {
@@ -109,9 +110,18 @@ namespace WpfApplication1
                 CalendarDataContext dbContext = new CalendarDataContext();
                 using (var context = new CalendarDataContext())
                 {
-                    contenttxt.Text = (from t in context.EventsCalendars
-                                  where t.Day == day && t.Month == month
-                                  select t.EventCal).FirstOrDefault();
+                    if(movableHoliday.movableHol(DateTime.Now) != null)
+                    {
+                        contenttxt.Text = movableHoliday.movableHol(DateTime.Now) + ", " + (from t in context.EventsCalendars
+                                                                                     where t.Day == day && t.Month == month
+                                                                                     select t.EventCal).FirstOrDefault();
+                    }
+                    else
+                    {
+                        contenttxt.Text = movableHoliday.movableHol(DateTime.Now) + (from t in context.EventsCalendars
+                                                                                     where t.Day == day && t.Month == month
+                                                                                     select t.EventCal).FirstOrDefault();
+                    }
                 }
             }
             catch

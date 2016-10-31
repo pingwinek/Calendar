@@ -4,10 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WpfApplication1.MainWindow"
         Title="Kalendarz" Height="550" Width="350" Background="White">
     <Grid>
-        <Label HorizontalAlignment="Center" Margin="0,0,0,100" VerticalAlignment="Center" FontSize="80" FontWeight="Bold">
+        <Label HorizontalAlignment="Center" Margin="0,0,0,160" VerticalAlignment="Center" FontSize="90" FontWeight="Bold">
             <TextBlock Name="daytxt" TextWrapping="Wrap" Text="1"/>
         </Label>
-        <Label HorizontalAlignment="Center" Margin="0,0,0,-150" VerticalAlignment="Center">
+        <Label HorizontalAlignment="Center" Margin="0,0,0,-170" VerticalAlignment="Center">
             <TextBlock Name="contenttxt"
                        TextWrapping="Wrap" 
                        TextAlignment="Center" 
@@ -20,7 +20,7 @@
         <Label HorizontalAlignment="Center" Margin="0,0,0,20" VerticalAlignment="Bottom">
             <TextBlock Name="txt1"  TextWrapping="Wrap" Text="Poniedziałek" FontSize="16" FontWeight="Bold"/>
         </Label>
-        <Label HorizontalAlignment="Center" Margin="0,0,0,250" VerticalAlignment="Center" FontWeight="Bold" FontSize="16">
+        <Label HorizontalAlignment="Center" Margin="0,0,0,330" VerticalAlignment="Center" FontWeight="Bold" FontSize="16">
             <TextBlock Name="monthtxt" TextWrapping="Wrap" Text="January"/>
         </Label>
         <Label HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16">
